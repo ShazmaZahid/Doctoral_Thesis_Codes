@@ -1,5 +1,5 @@
 
-# Star-Methods for Computing the Action of the Matrix Exponential
+# $\star$-Methods for Computing the Action of the Matrix Exponential
 
 ![MATLAB](https://img.shields.io/badge/Language-MATLAB-orange.svg)
 
