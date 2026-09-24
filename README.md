@@ -9,11 +9,6 @@ This repository contains the MATLAB source code for the numerical experiments
 of my doctoral thesis on **star-methods for computing the action of the matrix
 exponential**.
 
-The methods recast the computation of the matrix exponential action on a
-vector as the solution of a Stein matrix equation, obtained through a
-Legendre-polynomial discretization of the so-called star-product framework.
-The code is organized by the publication it reproduces; both publications
-form **Chapter 4** of the thesis.
 
 ## 📂 Project Structure
 
@@ -60,8 +55,8 @@ Reproduces **Tables 1 and 2** of the paper (Section 4.2 of the thesis).
 
 | File Name | Description |
 | :--- | :--- |
-| **`first_star_method.m`** | First star-method. Arnoldi projection, then the reduced Stein equation solved with `dlyap`. Prints the errors of the classical Krylov approximation and of the first star-method (Table 1). |
-| **`second_star_method.m`** | Second star-method. Solves the full star-linear system with GMRES, matrix-free. Prints the error, iteration count, and GMRES residual (Table 2, Figure 1). |
+| **`first_star_method.m`** | First star-method. 
+| **`second_star_method.m`** | Second star-method. 
 | **`table1_first_star.m`** | Reproduces the whole of Table 1 in one run. |
 | **`table2_second_star.m`** | Reproduces the whole of Table 2 in one run. |
 | **`Arnoldimgs.m`** | Arnoldi iteration with modified Gram-Schmidt orthogonalization. |
@@ -75,16 +70,14 @@ interval via the star-product approach*, **Linear Algebra and its
 Applications** (2026), in press.
 [DOI: 10.1016/j.laa.2026.04.014](https://doi.org/10.1016/j.laa.2026.04.014)
 
-Reproduces **Tables 4.3–4.5** of the thesis (Section 4.3): the Schur-based
-star-method and its Arnoldi variant, compared with `expv` and `expmv_tspan`
-over ten benchmark problems.
+Reproduces **Tables 4.3–4.5** of the thesis (Section 4.3): 
 
 | File Name | Description |
 | :--- | :--- |
 | **`experiments_paper2.m`** | Main driver. Selects one of ten benchmark problems (`test_id`) and reports, for each method, the relative error and the average computational time. |
-| **`run_star_method.m`** | Base star-method: direct solve of the full star-linear system by backslash (small matrices). |
-| **`run_star_dlyap.m`** | Schur-based star-method (direct variant): solves the Stein equation with `dlyap` using a precomputed Schur factor of the coefficient matrix. |
-| **`run_star_krylov.m`** | Schur-based star-method with Arnoldi: projects onto a Krylov subspace, then solves the reduced Stein equation. |
+| **`run_star_method.m`** | Base star-method|
+| **`run_star_dlyap.m`** | Schur-based star-method (direct variant) |
+| **`run_star_krylov.m`** | Schur-based star-method with Arnoldi |
 | **`setup_matrix_and_vector.m`** | Builds the test matrix and vector for each of the ten benchmark problems. |
 | **`Arnoldimgs.m`** | Arnoldi iteration with modified Gram-Schmidt orthogonalization. |
 | **`genCoeffMatrix.m`** | Coefficient matrix of $f(t)\Theta(t-s)$ in a basis of orthonormal Legendre polynomials. Requires chebfun. |
