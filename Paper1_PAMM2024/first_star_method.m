@@ -70,11 +70,9 @@ for i=1:M
 end
 % truncation
 T(end-2:end,:) = sparse(3,M); %to remove error
-[U,S] = schur(full(T/2),'complex');
-Uw = (U'*w);
 
 tic
-Y = dlyap(S,Hk(1:k-1,1:k-1).', Uw*e1');
+Y = dlyap(T/2,Hk(1:k-1,1:k-1).', Uw*e1');
 X = U*Y;
 Star_Sol = sqrt(2)*Vk(:,1:k-1)*X(1,:).';
 toc
